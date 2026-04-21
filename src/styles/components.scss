@@ -1,0 +1,161 @@
+// 工具栏样式
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  margin-bottom: 15px;
+
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .separator {
+      color: var(--text-light);
+      font-size: 16px;
+    }
+
+    .action-btns {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .action-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          border-color: var(--primary-color);
+          color: var(--primary-color);
+        }
+
+        &.primary {
+          background-color: var(--primary-color);
+          border-color: var(--primary-color);
+          color: white;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+
+        .btn-icon {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+}
+
+// 代码文本框样式
+.code-textarea {
+  width: 100%;
+  min-height: 400px;
+  padding: 16px;
+  border: none;
+  color: var(--text-primary);
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  outline: none;
+  resize: none;
+
+  &::placeholder {
+    color: var(--text-secondary);
+  }
+}
+
+// 输入框样式
+.input-field {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+
+  &:read-only {
+    background-color: #f5f5f5;
+  }
+
+  &:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+  }
+}
+
+// 选择框样式
+select.input-field {
+  cursor: pointer;
+}
+
+// 缩进设置选择框样式
+.indent-setting {
+  .setting-select {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 13px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+
+    .toolbar-left {
+      flex-direction: column;
+      width: 100%;
+
+      .language-selector {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .action-btns {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    .toolbar-right {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
